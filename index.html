@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html style='background:#333'>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title></title>
+
+<link href="https://cdn.jsdelivr.net/gh/alzozov/watches@2/magicscroll.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" rel="stylesheet" type="text/css" media="screen"/>
+<script id='magicscroll' src="https://cdn.jsdelivr.net/gh/alzozov/watches@2/magicscroll.js" type="text/javascript"></script>
+<script id='magicscroll' src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+ 
+</head>
+<body >
+
+<style type='text/css'>
+    span {
+     line-height: 16px !important; 
+     font-size: 12pt !important;
+    }
+    .subtitle.is-5 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+</style>
+
+
+<center id='mainimage'>
+  <img  
+  style='margin-top:5px'
+  class="" 
+  src="//cdn.shopify.com/s/files/1/0415/9068/5845/files/grayton-logo-2048x349_300x.png?v=1593397676" width="200" 
+  alt="Grayton">
+</center>  
+
+<div class="columns is-gapless is-vcentered">
+  <div class="column has-text-white is-4">
+        <p style='margin:5px' class="title is-4 has-text-white">
+                  Your life. Your time.
+        </p>
+        <div  style='padding-left:5px'>  
+          <p class="subtitle is-5 has-text-white">&bull; Affordable Grayton Automatic watches are authentic quality timepieces. </p>
+          <p class="subtitle is-5 has-text-white">&bull; Free Shipping Worldwide.</p>
+          <p class="subtitle is-5 has-text-white">&bull; Warranty 2 Years.</p>
+          <p class="subtitle is-5 has-text-white">&bull; High-quality SEIKO NH-35 Japanese Automatic Movements.</p>
+          <p class="subtitle is-5 has-text-white">&bull; Designed in New York for an urban environment.</p>
+        </div>
+       
+  </div>
+  <div class="column">
+
+    <div id='MagicScrollCont' 
+    class="MagicScroll" 
+    data-options="height: 300;  arrows:inside; step: 1; speed: 3000; autoplay: 2000; pagination: true; draggable: true;">    
+    
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+
+var products = [
+    
+    
+
+{
+	url: "https://grayton-watches.com/collections/native-california/products/native-california-forest-green-bracelet",
+	img: "https://cdn.shopify.com/s/files/1/0415/9068/5845/products/Grayton_78735_5_Front_E_fix_400x.png?v=1595346996",
+	name:"NATIVE CALIFORNIA FOREST GREEN BRACELET",
+	price:"325",
+}
+,
+{
+
+
+	url: "https://grayton-watches.com/collections/native/products/native-42-azure-blue-bracelet",
+	img: "https://cdn.shopify.com/s/files/1/0415/9068/5845/products/42mmBlue-Front_Bracelet_400x.png?v=1594960613",
+	name:"NATIVE 42 AZURE BLUE BRACELET",
+	price:"220",
+}
+,
+
+,
+{
+
+
+	url: "https://grayton-watches.com/collections/guilloche44/products/guiloche44-85362_1_7_e",
+	img: "https://cdn.shopify.com/s/files/1/0415/9068/5845/products/85362_1_7_E_1_400x.png?v=1630570054",
+	name:"GUILLOCHE COBALT BLUE LEATHER",
+	price:"230",
+}
+,
+
+{
+
+
+	url: "https://grayton-watches.com/collections/elegant-sport-leather/products/elegant-sport-leather-brushed-black-black",
+	img: "https://cdn.shopify.com/s/files/1/0415/9068/5845/products/85508_7B_E_1_400x.png?v=1630568741",
+	name:"ELEGANT SPORT MIDNIGHT BLACK LEATHER",
+	price:"280",
+}
+,
+
+
+{
+
+
+	url: "https://grayton-watches.com/collections/cushion-24h/products/cushion-24h-alpine-white-bracelet",
+	img:"https://cdn.shopify.com/s/files/1/0415/9068/5845/products/White_9bfeaf6f-0a51-41a5-a05f-7e9ffc486f8e_400x.png?v=1615364431",
+	name:"CUSHION 24H ALPINE WHITE BRACELET",
+	price:"620",
+}
+,
+
+
+{
+
+
+	url: "https://grayton-watches.com/collections/grayton-classic/products/classic-silver-leather",
+	img:"https://cdn.shopify.com/s/files/1/0415/9068/5845/products/85507_8_D_1_400x.png?v=1630566270",
+	name:"CLASSIC SILVER LEATHER",
+	price:"260",
+}
+,
+]
+
+function openproduct(i){
+    event('link_clicked', products[i].url);
+    window.open(products[i].url, '_blank');
+}
+
+var conteiner = document.getElementById('MagicScrollCont');
+var html = ''
+products.map(function(prod, i){
+    html+=` 
+        <a href='javascript:openproduct(${i});'>    
+        <img style="" srcset="${prod.img}"/>
+        <span>   
+            <br/> 
+               ${prod.name}
+            <br/> 
+            <b>Price:</b> $${prod.price} 
+        </span>
+        </a>
+    `
+})
+
+conteiner.innerHTML = html;
+
+function clean(){
+    
+	var allDivs = document.getElementsByTagName('div');
+	var allSpans = document.getElementsByTagName('span');
+	
+	for(var i=0; i<allSpans.length; i++){
+		if(allSpans[i].style.color=='red'){
+	
+			allSpans[i].style.display = 'none' 
+		}
+	}
+	
+	for(var i=0; i<allDivs.length; i++){
+		if(allDivs[i].style.color=='red'){
+			//alert('ok')
+			allDivs[i].style.display = 'none' 
+		}
+	}
+}
+
+setTimeout(clean, 500);
+setTimeout(clean, 1000);
+setTimeout(clean, 3000);
+
+function event(event_name, event_data){
+    $.ajax({
+      method: "POST",
+      url: "https://contexter.org/api/watch_tracker/event",
+      data: { event_name, event_data}
+    })
+      .done(function( msg ) {
+        
+    });
+}
+
+// setTimeout(function(){
+       
+// }, 500)
+
+
+// count page_loaded only when visible
+var page_loaded = false; 
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting && !page_loaded) {
+             page_loaded = true
+             event('page_loaded');
+        } 
+    });
+}, {});
+
+observer.observe($("#mainimage")[0]);
+
+
+</script>
+
+</body></html>
